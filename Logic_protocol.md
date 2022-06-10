@@ -4,6 +4,9 @@ The MLog Subroutine Protocol (MLSP) is a de-facto protocol for logical processor
 Mindustry. It describes a universal way of implementing subroutines in logic processors,
 in such a way that any two processors could be linked.
 
+NOTE: All code snippets are written using mlog as a text format, and ran through the 
+[minblur](https://github.com/Bindernews/minblur) transpiler.
+
 ## Overview
 
 Materials:
@@ -41,7 +44,7 @@ The MLSP defines the layout for a given function call.
 
  * Should sit in loop until activated.
  * Once it's task is finished, it should clear the cell (except for outputs), and resume looping.
- * On finish, it should also reset the cell at adress {0}, causing it to loop again.
+ * On finish, it should also reset the cell at address {0}, causing it to loop again.
 
 ## Code:
 
