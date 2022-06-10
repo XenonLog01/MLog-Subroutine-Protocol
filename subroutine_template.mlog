@@ -1,0 +1,16 @@
+_init:
+  set SUBR_CALL cell1  #! Set the cell the subroutine should check for activation.
+
+_init_loop:
+  read start SUBR_CALL 0           #! Check if it can start yet.
+  jump _init_loop notEqual start 1 #! if it can't go back up. 
+  jump _run                        #! Else, run.
+
+_run:
+  #! Get input, do some stuff.
+
+_finished:
+  #! Clear the inputs.
+  write 0 SUBR_CALL 0 #! Ternimate the routine.
+
+  jump _init always start 1

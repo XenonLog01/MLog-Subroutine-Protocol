@@ -1,0 +1,14 @@
+_init:
+  set SUBR cell1   #! Set the cell from which the subroutine operates.
+
+  #! Pass values to the routine.
+
+  write 1 SUBR 0   #! Initialize the subroutine.
+
+_wait_loop:
+  read continue SUBR 0 #! Check if the routine is done
+  jump _wait_loop equal continue 1 #! if not, jump up a line.
+  jump _continue always x false
+
+_continue:
+  #! Else, get the result.
